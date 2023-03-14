@@ -2,11 +2,11 @@ require "binary_search"
 
 RSpec.describe "#binary_search" do
   context "when the array is empty" do
-    it "returns nil" do
+    it "returns -1" do
       array = []
       target = 3
 
-      expect(binary_search(array, target)).to be_nil
+      expect(binary_search(array, target)).to eq(-1)
     end
   end
 
@@ -29,11 +29,20 @@ RSpec.describe "#binary_search" do
   end
 
   context "when the target is not in the array" do
-    it "returns nil" do
+    it "returns -1" do
       array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       target = 11
 
-      expect(binary_search(array, target)).to be_nil
+      expect(binary_search(array, target)).to eq(-1)
+    end
+  end
+
+  context "when there is one value in the array but it isn't the target" do
+    it "returns -1" do
+      array = [1]
+      target = 3
+
+      expect(binary_search(array, target)).to eq(-1)
     end
   end
 end

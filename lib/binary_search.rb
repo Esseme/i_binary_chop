@@ -1,4 +1,6 @@
 def binary_search(array, target)
+  return -1 if array.empty? || !array.include?(target)
+
   low = 0
   high = array.length - 1
 
@@ -13,6 +15,4 @@ def binary_search(array, target)
       high = mid - 1
     end
   end
-
-  nil
 end
