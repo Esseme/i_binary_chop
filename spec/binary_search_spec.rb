@@ -1,12 +1,13 @@
 require "binary_search"
 
-RSpec.describe "#binary_search" do
+RSpec.describe "binary_search" do
   context "when the array is empty" do
     it "returns -1" do
       array = []
       target = 3
+      value = BinaryChop.new(array, target).binary_search
 
-      expect(binary_search(array, target)).to eq(-1)
+      expect(value).to eq(-1)
     end
   end
 
@@ -14,8 +15,9 @@ RSpec.describe "#binary_search" do
     it "returns the index of the target" do
       array = [1]
       target = 1
+      value = BinaryChop.new(array, target).binary_search
 
-      expect(binary_search(array, target)).to eq(0)
+      expect(value).to eq(0)
     end
   end
 
@@ -23,8 +25,9 @@ RSpec.describe "#binary_search" do
     it "returns the index of the target" do
       array = [1, 3, 5, 7]
       target = 3
+      value = BinaryChop.new(array, target).binary_search
 
-      expect(binary_search(array, target)).to eq(1)
+      expect(value).to eq(1)
     end
   end
 
@@ -32,8 +35,9 @@ RSpec.describe "#binary_search" do
     it "returns -1" do
       array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       target = 11
+      value = BinaryChop.new(array, target).binary_search
 
-      expect(binary_search(array, target)).to eq(-1)
+      expect(value).to eq(-1)
     end
   end
 
@@ -41,8 +45,9 @@ RSpec.describe "#binary_search" do
     it "returns -1" do
       array = [1]
       target = 3
+      value = BinaryChop.new(array, target).binary_search
 
-      expect(binary_search(array, target)).to eq(-1)
+      expect(value).to eq(-1)
     end
   end
 end
